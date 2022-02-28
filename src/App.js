@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import LoginChiqui from "./components/login-chiqui";
+import HomeChiqui from "./components/home-chiqui";
+
+export const ControlAccess = ({children}) => {
+  let location = useLocation();
+    if (localStorage.getItem("perfil") === "null")       
+      return <Navigate to="/login-chiqui" state={{ from: location }} />;
+
+    return children;    
+};  
+
+export const ControlAdmin = ({children}) => {
+  let location = useLocation();
+    if (localStorage.getItem("perfil") === "comum")       
+      return <Navigate to="/painel" state={{ from: location }} />;
+
+    return children;    
+};  
+
+class App extends Component {  
+  render() {
+    return (                 
+      <Routes>
+        <Route path="/login-chiqui" element={<LoginChiqui />} />                  
+        <Route exact path="/" element={<LoginChiqui />} />            
+        <Route path="/painel" element={<ControlAccess> <HomeChiqui /> </ControlAccess>} />        
+        {/* <Route path="/add-clientes" 
+          element={
+              <ControlAccess> 
+                <ControlAdmin> 
+                  <AddCliente/> 
+                </ControlAdmin> 
+              </ControlAccess>} 
+        />            */}
+      </Routes>
+    );
+  } 
 }
 
 export default App;
