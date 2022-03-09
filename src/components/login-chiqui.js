@@ -27,45 +27,44 @@ export default class LoginChiqui extends Component {
                         <div className="card o-hidden border-0 shadow-lg my-5">
                             <div className="card-body p-0">
                                 <div className="row">
-                                    <div className="col-lg-6 d-none d-lg-block bg-login-image">
-                                        <div className="col-lg-10">
-                                            <div className="p-5">
-                                                <div className="text-center">
-                                                    <span style={{...styleBase, ...styleAzul}} >
-                                                        DENTISTAS [ 
-                                                            <span style={{...styleBase, ...styleVermelho}}> ORTHO CHIQUI </span> 
-                                                        ]</span>                                                                                                                                                                
+                                    <div className="col-lg-6 d-none d-lg-block bg-login-image"/>
+                                    <div className="col-lg-6">
+                                        <div className="p-5">
+                                            <div className="text-center">
+                                                <span style={{...styleBase, ...styleAzul}} >
+                                                    DENTISTAS [ 
+                                                        <span style={{...styleBase, ...styleVermelho}}> ORTHO CHIQUI </span> 
+                                                    ]</span>                                                                                                                                                                
+                                            </div><br />
+                                            <form className="user">
+                                                <div className="form-group">
+                                                    <input 
+                                                        type="login" 
+                                                        className="form-control form-control-user"
+                                                        value={this.login}                                                            
+                                                        placeholder="LOGIN" 
+                                                        onChange={value => this.onChangeHandler(value)}
+                                                        />
                                                 </div>
-                                                <form className="user">
-                                                    <div className="form-group">
-                                                        <input 
-                                                            type="login" 
-                                                            className="form-control form-control-user"
-                                                            value={this.login}                                                            
-                                                            placeholder="LOGIN" 
-                                                            onChange={value => this.onChangeHandler(value)}
-                                                            />
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <input 
-                                                            type="new-password" 
-                                                            className="form-control form-control-user"
-                                                            name="pwd" 
-                                                            value={this.pwd}
-                                                            onChange={value => this.onChangeHandler(value)}
-                                                            placeholder="***"/>
-                                                    </div>
-                                                    <div className="from-group">
-                                                        <button                                     
-                                                            className="btn btn-primary"
-                                                            onClick={() => this.tryLogin()}>
-                                                                Entrar
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                                <div className="form-group">
+                                                    <input 
+                                                        type="new-password" 
+                                                        className="form-control form-control-user"
+                                                        name="pwd" 
+                                                        value={this.pwd}
+                                                        onChange={value => this.onChangeHandler(value)}
+                                                        placeholder="***"/>
+                                                </div>
+                                                <div className="from-group">
+                                                    <button                                     
+                                                        className="btn btn-primary btn-user btn-block"
+                                                        onClick={() => this.tryLogin()}>
+                                                            Entrar
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </div>
-                                    </div>
+                                    </div>                                    
                                 </div>
                             </div>    
                         </div>
@@ -77,7 +76,7 @@ export default class LoginChiqui extends Component {
 }
 
 const styleBase = {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: 18
 }
 
