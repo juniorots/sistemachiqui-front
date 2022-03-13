@@ -1,3 +1,6 @@
+.row {
+    height: 570px !important;
+}
 .p-5 {
-    padding-bottom: 600 !important;
+    margin-top: 100px;
 }

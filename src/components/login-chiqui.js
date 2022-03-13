@@ -76,8 +76,8 @@ export default class LoginChiqui extends Component {
 }
 
 const styleBase = {
-    fontWeight: 600,
-    fontSize: 18
+    fontWeight: 700,
+    fontSize: 23
 }
 
 const styleAzul = {
