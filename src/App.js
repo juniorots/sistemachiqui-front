@@ -27,8 +27,11 @@ class App extends Component {
     return (                 
       <Routes>
         <Route path="/login-chiqui" element={<LoginChiqui />} />                  
-        <Route exact path="/" element={<LoginChiqui />} />            
+        <Route exact path="/" element={<HomeChiqui />} />            
+        <Route path="/painel" element={<HomeChiqui />} />        
+        {/*
         <Route path="/painel" element={<ControlAccess> <HomeChiqui /> </ControlAccess>} />        
+        */}
         {/* <Route path="/add-clientes" 
           element={
               <ControlAccess> 

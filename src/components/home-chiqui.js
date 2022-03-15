@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import HeaderChiqui from "./header-chiqui";
+import MenuChiqui from "./menu-chiqui";
 
 export default class HomeChiqui extends Component {
     constructor(props) {
@@ -9,7 +11,12 @@ export default class HomeChiqui extends Component {
     }
     render() {
         return (
-            <span>PAGINA HOME</span>
+            <div className="container">
+                <HeaderChiqui />
+                <div id="wrapper">
+                    <MenuChiqui />
+                </div>
+            </div>
         );
     }
 }
