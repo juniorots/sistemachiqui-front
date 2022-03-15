@@ -12,10 +12,10 @@ export default class MenuChiqui extends Component {
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <HeaderChiqui />
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/painel">
-                    <div class="sidebar-brand-icon rotate-n-15">
-                        <i class="fas fa-laugh-wink"></i>
+                    <div className="sidebar-brand-icon rotate-n-15">
+                        <i className="fas fa-laugh-wink"></i>
                     </div>                    
-                    <div class="sidebar-brand-text mx-3">[USUARIO LOGADO AQUI]</div>
+                    <div className="sidebar-brand-text mx-3">[USUARIO LOGADO AQUI]</div>
                 </Link>
             </ul>
         );
