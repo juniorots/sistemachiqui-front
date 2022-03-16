@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import {Helmet} from "react-helmet";
+import JQuery from "jquery";
 import "../css/sb-admin-2.css";
 import "../css/sb-admin-2.min.css";
 import "../vendor/fontawesome-free/css/all.min.css";
 import "../css/custom-chiqui.css";
+import "../js/sb-admin-2.js";
+import "../js/sb-admin-2.min.js";
 
 export default class HeaderChiqui extends Component {
     render() {

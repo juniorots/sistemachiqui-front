@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import HeaderChiqui from "./header-chiqui";
-import "../css/custom-chiqui.css";
-import "../css/sb-admin-2.css";
-import "../css/sb-admin-2.min.css";
-
 
 export default class MenuChiqui extends Component {
     render() {
@@ -17,6 +13,32 @@ export default class MenuChiqui extends Component {
                     </div>                    
                     <div className="sidebar-brand-text mx-3">[USUARIO LOGADO AQUI]</div>
                 </Link>
+                <hr className="sidebar-divider my-0" />
+                <li class="nav-item active">
+                    <Link className="nav-link" to="/painel">
+                        <i className="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </Link>
+                </li>
+                <hr className="sidebar-divider" />
+                <div className="sidebar-heading">
+                    Pessoal
+                </div>
+
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i className="fas fa-fw fa-cog"></i>
+                        <span>Pacientes</span>
+                    </Link>
+                    <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div className="bg-white py-2 collapse-inner rounded">
+                            <h6 className="collapse-header">[ LISTAR ] Pacientes</h6>
+                            <Link className="collapse-item" to="buttons.html">Buttons</Link>
+                            <Link className="collapse-item" to="cards.html">Cards</Link>
+                        </div>
+                    </div>
+                </li>
             </ul>
         );
     }
