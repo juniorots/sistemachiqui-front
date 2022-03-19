@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.min.css"
-
-import LoginChiqui from "./components/login-chiqui";
-import HomeChiqui from "./components/home-chiqui";
+import LoginChiqui from "./pages/components/login-chiqui";
+import HomeChiqui from "./pages/components/home-chiqui";
 
 export const ControlAccess = ({children}) => {
   let location = useLocation();
