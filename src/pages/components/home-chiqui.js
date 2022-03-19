@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import { Routes } from "../../routes";
 
 // resources
-import Presentation from "../Presentation";
+// import Presentation from "../Presentation";
 import Forms from "./Forms";
 import NotFoundPage from "../examples/NotFound";
 import Sidebar from "../../components/Sidebar";
@@ -12,9 +12,9 @@ import Footer from "../../components/Footer";
 import Preloader from "../../components/Preloader";
 
 import HeaderChiqui from "./header-chiqui";
-import MenuChiqui from "./menu-chiqui";
+// import MenuChiqui from "./menu-chiqui";
 
-const RouteWithLoader = ({ component: Component, ...rest }) => {
+const RouteWithLoader = ({ element: Component, ...rest }) => {
     const [loaded, setLoaded] = useState(false);
   
     useEffect(() => {
@@ -27,7 +27,7 @@ const RouteWithLoader = ({ component: Component, ...rest }) => {
     );
   };
 
-  const RouteWithSidebar = ({ component: Component, ...rest }) => {
+  const RouteWithSidebar = ({ element: Component, ...rest }) => {
     const [loaded, setLoaded] = useState(false);
   
     useEffect(() => {
@@ -75,9 +75,9 @@ export default class HomeChiqui extends Component {
             <div className="container">
                 <HeaderChiqui />
                 <Routes>
-                    <RouteWithLoader exact path={Routes.NotFound.path} component={NotFoundPage} />
+                    <RouteWithLoader exact path={Routes.NotFound.path} element={<NotFoundPage />} />
 
-                    <RouteWithSidebar exact path={Routes.Forms.path} component={Forms} />
+                    <RouteWithSidebar exact path={Routes.Forms.path} element={<Forms />} />
                 </Routes>
             </div>
         );
