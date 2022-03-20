@@ -4,27 +4,28 @@ import { Routes } from "../../routes";
 
 // resources
 // import Presentation from "../Presentation";
-import Forms from "./Forms";
+// import Forms from "./Forms";
 import NotFoundPage from "../examples/NotFound";
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Preloader from "../../components/Preloader";
 
+// custom
 import HeaderChiqui from "./header-chiqui";
-// import MenuChiqui from "./menu-chiqui";
+import MenuChiqui from "./menu-chiqui";
 
-const RouteWithLoader = ({ element: Component, ...rest }) => {
-    const [loaded, setLoaded] = useState(false);
-  
-    useEffect(() => {
-      const timer = setTimeout(() => setLoaded(true), 1000);
-      return () => clearTimeout(timer);
-    }, []);
-  
-    return (
-      <Route {...rest} render={props => ( <> <Preloader show={loaded ? false : true} /> <Component {...props} /> </> ) } />
-    );
+  const RouteWithLoader = ({ element: Component, ...rest }) => {
+      const [loaded, setLoaded] = useState(false);
+    
+      useEffect(() => {
+        const timer = setTimeout(() => setLoaded(true), 1000);
+        return () => clearTimeout(timer);
+      }, []);
+          
+      return (
+        <Route {...rest} render={props => ( <> <Preloader show={loaded ? false : true} /> <Component {...props} /> </> ) } />
+      );
   };
 
   const RouteWithSidebar = ({ element: Component, ...rest }) => {
@@ -72,13 +73,17 @@ export default class HomeChiqui extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <HeaderChiqui />
+            <div className="container">              
+              <HeaderChiqui />
+              <Routes>
+                <Route exact path="/menu" element={<MenuChiqui />} />
+              </Routes>
+                {/* 
                 <Routes>
-                    <RouteWithLoader exact path={Routes.NotFound.path} element={<NotFoundPage />} />
+                    <RouteWithLoader exact path={Routes.NotFound.path} element={<NotFoundPage />} /> 
 
                     <RouteWithSidebar exact path={Routes.Forms.path} element={<Forms />} />
-                </Routes>
+                </Routes> */}
             </div>
         );
     }

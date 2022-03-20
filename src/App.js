@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import LoginChiqui from "./pages/components/login-chiqui";
 import HomeChiqui from "./pages/components/home-chiqui";
@@ -20,27 +20,26 @@ export const ControlAdmin = ({children}) => {
     return children;    
 };  
 
-class App extends Component {  
+export default class App extends Component {  
   render() {
-    return (                 
+    return (   
+      
       <Routes>
         <Route path="/login-chiqui" element={<LoginChiqui />} />                  
         <Route exact path="/" element={<HomeChiqui />} />            
         <Route path="/painel" element={<HomeChiqui />} />        
-        {/*
         <Route path="/painel" element={<ControlAccess> <HomeChiqui /> </ControlAccess>} />        
-        */}
-        {/* <Route path="/add-clientes" 
+        
+  {/*        <Route path="/add-clientes" 
           element={
               <ControlAccess> 
                 <ControlAdmin> 
                   <AddCliente/> 
                 </ControlAdmin> 
               </ControlAccess>} 
-        />            */}
+            />            */}
       </Routes>
     );
   } 
 }
 
-export default App;
